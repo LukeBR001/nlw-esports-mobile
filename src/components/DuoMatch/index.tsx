@@ -14,7 +14,7 @@ interface Props extends ModalProps {
 }
 
 export function DuoMatch({ discord, onClose, ...rest }: Props) {
-    const [isCoppíng, setIsCopping] = useState(false)
+    const [isCopping, setIsCopping] = useState(false)
 
     async function handleDiscordToClipboard() {
         setIsCopping(true)
@@ -53,10 +53,10 @@ export function DuoMatch({ discord, onClose, ...rest }: Props) {
           <TouchableOpacity 
             style={styles.discordBtn}
             onPress={handleDiscordToClipboard}
-            disabled={isCoppíng}
+            disabled={isCopping}
           >
             <Text style={styles.discord}>
-                {isCoppíng ? <ActivityIndicator color={THEME.COLORS.PRIMARY}/> : discord}
+                {isCopping ? <ActivityIndicator color={THEME.COLORS.PRIMARY}/> : discord}
             </Text>
           </TouchableOpacity>
         </View>
